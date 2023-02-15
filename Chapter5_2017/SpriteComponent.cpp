@@ -16,7 +16,7 @@ SpriteComponent::~SpriteComponent()
 
 void SpriteComponent::Draw(Shader* shader)
 {
-	/*
+	
 	Matrix4 scaleMat = Matrix4::CreateScale(
 		static_cast<float>(mTexWidth),
 		static_cast<float>(mTexHeight),
@@ -24,7 +24,7 @@ void SpriteComponent::Draw(Shader* shader)
 	Matrix4 world = scaleMat * mOwner->GetWorldTransform();
 
 	shader->SetMatrixUniform("uWorldTransform", world);
-	*/
+	
 
 	glDrawElements(
 		GL_TRIANGLES,

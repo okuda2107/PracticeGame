@@ -3,7 +3,7 @@
 uniform mat4 uWorldTransform;
 uniform mat4 uViewProj;
 
-//’¸“_‘®«‚ğ‚±‚±‚É‚¢‚ê‚é
+//ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½
 in vec3 inPosition;
 
 void main()
