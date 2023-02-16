@@ -2,28 +2,28 @@
 
 VertexArray::VertexArray(const float* verts, unsigned int numVerts, const unsigned int* indices, unsigned int numIndices) : mNumVerts(numVerts), mNumIndices(numIndices)
 {
-	//���_�z��I�u�W�F�N�g�̍쐬
+	//頂点配列オブジェクトを作成
 	glGenVertexArrays(1, &mVertexArray);
 	glBindVertexArray(mVertexArray);
 
-	//���_�o�b�t�@�̍쐬
+	//頂点バッファを作成
 	glGenBuffers(1, &mVertexBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, mVertexBuffer);
 
-	//���_�o�b�t�@�ɒ��_�f�[�^��R�s�[
+	//頂点バッファにデータを送る
 	glBufferData
 	(
 		GL_ARRAY_BUFFER,
-		numVerts * 3 * sizeof(float),
+		numVerts * 5 * sizeof(float),
 		verts,
 		GL_STATIC_DRAW
 	);
 
-		//�C���f�b�N�X�o�b�t�@��쐬
+		//インデックスバッファを作成
 	glGenBuffers(1, &mIndexBuffer);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIndexBuffer);
 
-	//�C���f�b�N�X�o�b�t�@�ɃC���f�b�N�X�f�[�^��R�s�[
+	//インデックスバッファにデータを送る
 	glBufferData
 	(
 		GL_ELEMENT_ARRAY_BUFFER,
@@ -32,7 +32,7 @@ VertexArray::VertexArray(const float* verts, unsigned int numVerts, const unsign
 		GL_STATIC_DRAW
 	);
 
-	//���_���C�A�E�g�̎w�� (���_����=���_�̎g����)
+	//頂点属性を指定
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer
 	(
@@ -40,8 +40,18 @@ VertexArray::VertexArray(const float* verts, unsigned int numVerts, const unsign
 		3,
 		GL_FLOAT,
 		GL_FALSE,
-		sizeof(float) * 3,
+		sizeof(float) * 5,
 		0
+	);
+
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(
+		1,
+		2,
+		GL_FLOAT,
+		GL_FALSE,
+		sizeof(float) * 5,
+		reinterpret_cast<void*>(sizeof(float) * 3)
 	);
 }
 

@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "Math.h"
 #include "Shader.h"
+#include "Texture.h"
 
 SpriteComponent::SpriteComponent(class Actor* owner, int drawOrder) : Component(owner), mDrawOrder(drawOrder), mTexHeight(128), mTexWidth(128), mTexture(nullptr)
 {
@@ -25,6 +26,7 @@ void SpriteComponent::Draw(Shader* shader)
 
 	shader->SetMatrixUniform("uWorldTransform", world);
 	
+	mTexture->SetActive();
 
 	glDrawElements(
 		GL_TRIANGLES,
@@ -34,8 +36,9 @@ void SpriteComponent::Draw(Shader* shader)
 	);
 }
 
-void SpriteComponent::SetTexture(SDL_Texture* tex)
+void SpriteComponent::SetTexture(Texture* tex)
 {
 	mTexture = tex;
-	SDL_QueryTexture(tex, nullptr, nullptr, &mTexWidth, &mTexHeight);
+	mTexWidth = tex->GetWidth();
+	mTexHeight = tex->GetHeight();
 }

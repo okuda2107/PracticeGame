@@ -1,6 +1,5 @@
 #version 330
 
-//���_����������ɂ����
 in vec3 inPosition;
 
 void main()

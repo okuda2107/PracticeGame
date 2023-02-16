@@ -3,10 +3,14 @@
 uniform mat4 uWorldTransform;
 uniform mat4 uViewProj;
 
-in vec3 inPosition;
+layout(location = 0) in vec3 inPosition;
+layout(location = 1) in vec2 inTexCoord;
+
+out vec2 flagTexCoord;
 
 void main()
 {
 	vec4 pos = vec4(inPosition, 1.0);
 	gl_Position = pos * uWorldTransform * uViewProj;
+	flagTexCoord = inTexCoord;
 }

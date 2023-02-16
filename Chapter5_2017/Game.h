@@ -24,7 +24,7 @@ public:
 
 	
 
-	SDL_Texture* GetTexture(const std::string& filename);
+	class Texture* GetTexture(const std::string& filename);
 private:
 	void ProcessInput();
 	void UpdateGame();
@@ -42,7 +42,7 @@ private:
 
 	bool mUpdatingActors;
 
-	std::unordered_map<std::string, SDL_Texture*> mTextures;
+	std::unordered_map<std::string, Texture*> mTextures;
 	std::vector<class SpriteComponent*> mSprites;
 
 	class Ship* mShip;

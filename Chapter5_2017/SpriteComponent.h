@@ -10,11 +10,11 @@ public:
 	~SpriteComponent();
 
 	virtual void Draw(class Shader* shader);
-	virtual void SetTexture(SDL_Texture* tex);
+	virtual void SetTexture(class Texture* tex);
 
 	const int GetDrawOrder() { return mDrawOrder; }
 protected:
-	SDL_Texture* mTexture;
+	class Texture* mTexture;
 	int mDrawOrder;
 	int mTexHeight;
 	int mTexWidth;
