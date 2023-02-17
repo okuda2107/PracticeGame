@@ -8,20 +8,20 @@ class Shader
 public:
 	Shader();
 	~Shader();
-	//w’è‚³‚ê‚½–¼‘O‚Ì’¸“_/ƒtƒ‰ƒOƒƒ“ƒgƒVƒF[ƒ_[‚ğ“Ç‚İ‚Ş
+	//é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ«ã¨ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚“ã§åˆã‚ã›ã‚‹
 	bool Load(const std::string& vertName,
 		const std::string& fragName);
 	void Unload();
 	void SetActive();
 	void SetMatrixUniform(const char* name, const Matrix4& matrix);
 private:
-	//ƒVƒF[ƒ_[‚ğƒRƒ“ƒpƒCƒ‹‚·‚é
+	//ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã™ã‚‹
 	bool CompileShader(const std::string& filename, GLenum shaderType, GLuint& outShader);
-	//ƒVƒF[ƒ_[‚ÌƒRƒ“ƒpƒCƒ‹‚É¬Œ÷‚µ‚½‚©‚Ç‚¤‚©‚Ì”»’è
+	//æ­£ã—ãã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã§ããŸã‹ã©ã†ã‹
 	bool IsCompiled(GLuint shader);
-	//’¸“_/ƒtƒ‰ƒOƒƒ“ƒgƒvƒƒOƒ‰ƒ€‚ÌƒŠƒ“ƒO‚ğŠm”F
+	//æ­£ã—ãã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½œæˆã—ãŸã‹ã©ã†ã‹
 	bool IsValidProgram();
-	//ƒVƒF[ƒ_[ƒIƒuƒWƒFƒNƒg‚ÌID‚ğŠi”[
+	//ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ«ã®OpenGLIDã‚’æ ¼ç´
 	GLuint mVertexShader;
 	GLuint mFragShader;
 	GLuint mShaderProgram;

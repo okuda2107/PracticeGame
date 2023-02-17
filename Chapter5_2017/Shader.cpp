@@ -11,19 +11,19 @@ Shader::~Shader()
 
 bool Shader::CompileShader(const std::string& filename, GLuint shaderType, GLuint& outShader)
 {
-	//�t�@�C����J��
+	//ファイルの文字列を読み込む
 	std::ifstream shaderFile(filename);
 	if (shaderFile.is_open())
 	{
-		//���ׂẴe�L�X�g��1�̕�����ɓǂݍ���
+		//文字列操作のためのstreamに格納
 		std::stringstream sstream;
 		sstream << shaderFile.rdbuf();
 		std::string contents = sstream.str();
 		const char* contentsChar = contents.c_str();
 
-		//�w�肳�ꂽ�^�C�v�̃V�F�[�_�[��쐬
+		//シェーダープログラムを作成
 		outShader = glCreateShader(shaderType);
-		//�ǂݍ��񂾕�����ł̃R���p�C������݂�
+		//シェーダーのプログラムコードを流し込む
 		glShaderSource(outShader, 1, &(contentsChar), nullptr);
 		glCompileShader(outShader);
 
@@ -44,7 +44,7 @@ bool Shader::CompileShader(const std::string& filename, GLuint shaderType, GLuin
 bool Shader::IsCompiled(GLuint shader)
 {
 	GLint status;
-	//�R���p�C����Ԃ�₢���킹��
+	//シェーダーが正しくコンパイルされたか
 	glGetShaderiv(shader, GL_COMPILE_STATUS, &status);
 	if (status != GL_TRUE)
 	{
@@ -59,12 +59,12 @@ bool Shader::IsCompiled(GLuint shader)
 
 bool Shader::Load(const std::string& vertName, const std::string& fragName)
 {
-	//���_�V�F�[�_�[�ƃt���O�����g�V�F�[�_�[��R���p�C������
+	//コンパイルする
 	if (!CompileShader(vertName, GL_VERTEX_SHADER, mVertexShader) || !CompileShader(fragName, GL_FRAGMENT_SHADER, mFragShader))
 	{
 		return false;
 	}
-	//���_�V�F�[�_�[�ƃt���O�����g�V�F�[�_�[������N���ăV�F�[�_�[�v���O��������
+	//プログラムをOpenGL上に作成
 	mShaderProgram = glCreateProgram();
 	glAttachShader(mShaderProgram, mVertexShader);
 	glAttachShader(mShaderProgram, mFragShader);
@@ -79,7 +79,7 @@ bool Shader::Load(const std::string& vertName, const std::string& fragName)
 bool Shader::IsValidProgram()
 {
 	GLint status;
-	//�R���p�C����Ԃ�₢���킹��
+	//正しくプログラムが作成できたかどうか
 	glGetProgramiv(mShaderProgram, GL_LINK_STATUS, &status);
 	if (status != GL_TRUE)
 	{

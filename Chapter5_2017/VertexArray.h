@@ -7,20 +7,20 @@ public:
 	VertexArray(const float* verts, unsigned int numVerts, const unsigned int* indices, unsigned int numIndices);
 	~VertexArray();
 
-	//���̒��_�z���A�N�e�B�u�ɂ���
+	//このクラスに格納されている頂点配列オブジェクトをアクティブにする
 	void SetActive();
 
 	unsigned int GetNumIndices() const { return mNumIndices; }
 	unsigned int GetNumVerts() const { return mNumVerts; }
 private:
-	//���_�o�b�t�@�ɂ��钸�_�̐�
+	//頂点の数
 	const unsigned int mNumVerts;
-	//�C���f�b�N�X�o�b�t�@�ɂ���C���f�b�N�X�̐�
+	//インデックスの数
 	const unsigned int mNumIndices;
-	//���_�o�b�t�@��OpenGL ID
+	//頂点バッファのOpenGL ID
 	unsigned int mVertexBuffer;
-	//�C���f�b�N�X�o�b�t�@��OpenGL ID
+	//インデックスバッファのOpenGL ID
 	unsigned int mIndexBuffer;
-	//���_�z��I�u�W�F�N�g��OpenGL ID
+	//頂点配列オブジェクトのOpenGL ID
 	unsigned int mVertexArray;
 };

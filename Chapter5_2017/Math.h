@@ -57,7 +57,7 @@ public:
 	float x;
 	float y;
 
-	explicit Vector2(float x, float y) : x(x), y(y)//explicit‚ğg‚¤‚Æ’Pƒ‚È”’l‚ğ‘ã“ü‚·‚é‰Šú‰»‚ª‚Å‚«‚È‚¢(‹t‚Ég‚Á‚Ä‚¢‚È‚©‚Á‚½‚ç‚Å‚«‚é)
+	explicit Vector2(float x, float y) : x(x), y(y)//explicitã«ã™ã‚‹ã¨æš—é»™çš„ãªå‹å¤‰æ›ãŒã•ã‚Œãªããªã‚‹ã€€ã“ã®æ›¸ãæ–¹ã§ã®åˆæœŸåŒ–ã—ã‹èªã‚ã¾ã›ã‚“ã‚ˆã£ã¦ã“ã¨
 	{}
 	Vector2() : x(0.0f), y(0.0f)
 	{}
@@ -98,7 +98,7 @@ public:
 	{
 		this->x += vec.x;
 		this->y += vec.y;
-		return *this; //‘ã“ü‰‰Zq‚ÌƒI[ƒo[ƒ[ƒh‚Í‚»‚ÌƒNƒ‰ƒX‚ÌÀ‘Ì‚ğ•Ô‚·•K—v‚ª‚ ‚é‚½‚ß * ‚ğ•t‚¯‚é, this‚Í‰E•Ó’lH
+		return *this; //returnã—ãŸå€¤ã‚’ç›´æ¥å‚ç…§ã—ã¦ã„ã‚‹çŠ¶æ…‹
 	}
 
 	float LengthSquared() const
