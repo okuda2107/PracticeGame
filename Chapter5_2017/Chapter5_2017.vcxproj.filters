@@ -42,12 +42,6 @@
     <ClCompile Include="Shader.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Asteroid.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Ship.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="CircleComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -58,6 +52,15 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,12 +89,6 @@
     <ClInclude Include="Shader.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Asteroid.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Ship.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CircleComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -102,6 +99,18 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -119,6 +128,18 @@
       <Filter>リソース ファイル</Filter>
     </None>
     <None Include="Shaders\Sprite.frag">
+      <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="Assets\Cube.gpmesh">
+      <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="Shaders\BasicMesh.frag">
+      <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="Shaders\BasicMesh.vert">
+      <Filter>リソース ファイル</Filter>
+    </None>
+    <None Include="Assets\Sphere.gpmesh">
       <Filter>リソース ファイル</Filter>
     </None>
   </ItemGroup>

@@ -3,7 +3,7 @@
 #include "Component.h"
 #include <algorithm>
 
-Actor::Actor(class Game* game) : mGame(game), mScale(1.0f), mRotation(0.0f), mState(State::EActive), mRecomputeWorldTransform(true)
+Actor::Actor(class Game* game) : mGame(game), mScale(1.0f), mRotation(Quaternion::Identity), mState(State::EActive), mRecomputeWorldTransform(true)
 {
 	mGame->AddActor(this);
 }
@@ -82,8 +82,8 @@ void Actor::ComputeWorldTransform()
 		mRecomputeWorldTransform = false;
 		// scaling, rotation, translation
 		mWorldTransform = Matrix4::CreateScale(mScale);
-		mWorldTransform *= Matrix4::CreateRotationZ(mRotation);
-		mWorldTransform *= Matrix4::CreateTranslation(Vector3(mPosition.x, mPosition.y, 0.0f));
+		mWorldTransform *= Matrix4::CreateFromQuaternion(mRotation);
+		mWorldTransform *= Matrix4::CreateTranslation(mPosition);
 		for (auto comp : mComponents)
 		{
 			comp->OnUpdateWorldTransform();

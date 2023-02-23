@@ -11,7 +11,7 @@ public:
 	void SetRadius(float radius) { mRadius = radius; }
 	float GetRadius() const { return  mRadius; };
 
-	const Vector2& GetCenter() const { return mOwner->GetPosition(); };
+	const Vector3& GetCenter() const { return mOwner->GetPosition(); };
 private:
 	float mRadius;
 };

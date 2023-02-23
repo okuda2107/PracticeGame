@@ -5,25 +5,35 @@ InputComponent::InputComponent(class Actor*owner) : MoveComponent(owner)
 
 void InputComponent::ProcessInput(const uint8_t* keystate)
 {
-	float forwardSpeed = 0.0f;
+	float xangularSpeed = 0.0f;
+	if (keystate[xRotationKey])
+	{
+		xangularSpeed += mMaxAngularSpeed;
+	}
+	if (keystate[xAnti])
+	{
+		xangularSpeed -= mMaxAngularSpeed;
+	}
+	SetXAngularSpeed(xangularSpeed);
+	float yangularSpeed = 0.0f;
 	if (keystate[mForwardKey])
 	{
-		forwardSpeed += mMaxForwardSpeed;
+		yangularSpeed += mMaxAngularSpeed;
 	}
 	if (keystate[mBackKey])
 	{
-		forwardSpeed -= mMaxForwardSpeed;
+		yangularSpeed -= mMaxAngularSpeed;
 	}
-	SetForwardSpeed(forwardSpeed);
+	SetYAngularSpeed(yangularSpeed);
 
-	float angularSpeed = 0.0f;
+	float zangularSpeed = 0.0f;
 	if (keystate[mClockwiseKey])
 	{
-		angularSpeed += mMaxAngularSpeed;
+		zangularSpeed += mMaxAngularSpeed;
 	}
 	if (keystate[mCounterClockwiseKey])
 	{
-		angularSpeed -= mMaxAngularSpeed;
+		zangularSpeed -= mMaxAngularSpeed;
 	}
-	SetAngularSpeed(angularSpeed);
+	SetZAngularSpeed(zangularSpeed);
 }

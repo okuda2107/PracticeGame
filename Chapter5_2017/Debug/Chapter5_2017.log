@@ -1,16 +1,3 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: 中間ディレクトリ (Debug\) に別のプロジェクト (Chapter5_2017.vcxproj) と共有されているファイルが含まれています。これにより、クリーンしてリビルド動作が適切に行われない可能性があります。
-  Actor.cpp
-  Asteroid.cpp
-  CircleComponent.cpp
-  Component.cpp
-  Game.cpp
   InputComponent.cpp
-  Math.cpp
-  MoveComponent.cpp
-  Random.cpp
-  Shader.cpp
-  Ship.cpp
-  SpriteComponent.cpp
-  VertexArray.cpp
-  コードを生成中...
   Chapter5_2017.vcxproj -> C:\Programming\C++_2017\Chapter5_2017 - コピー\Debug\GameProgrammingCpp.exe

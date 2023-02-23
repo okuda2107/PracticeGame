@@ -2,17 +2,18 @@
 #include "Actor.h"
 #include "Game.h"
 #include "Math.h"
+#include "Renderer.h"
 #include "Shader.h"
 #include "Texture.h"
 
 SpriteComponent::SpriteComponent(class Actor* owner, int drawOrder) : Component(owner), mDrawOrder(drawOrder), mTexHeight(128), mTexWidth(128), mTexture(nullptr)
 {
-	mOwner->GetGame()->AddSprite(this);
+	mOwner->GetGame()->GetRenderer()->AddSprite(this);
 }
 
 SpriteComponent::~SpriteComponent()
 {
-	mOwner->GetGame()->RemoveSprite(this);
+	mOwner->GetGame()->GetRenderer()->RemoveSprite(this);
 }
 
 void SpriteComponent::Draw(Shader* shader)
