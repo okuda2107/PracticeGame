@@ -1,3 +1,11 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: 中間ディレクトリ (Debug\) に別のプロジェクト (Chapter5_2017.vcxproj) と共有されているファイルが含まれています。これにより、クリーンしてリビルド動作が適切に行われない可能性があります。
-  InputComponent.cpp
+  Game.cpp
+  Mesh.cpp
+C:\Programming\C++_2017\Chapter5_2017 - コピー\Chapter5_2017\Mesh.cpp(107,74): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Programming\C++_2017\Chapter5_2017 - コピー\Chapter5_2017\Mesh.cpp(107,53): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Programming\C++_2017\Chapter5_2017 - コピー\Chapter5_2017\Mesh.cpp(107,32): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+  MeshComponent.cpp
+  Renderer.cpp
+  SpriteComponent.cpp
+  コードを生成中...
   Chapter5_2017.vcxproj -> C:\Programming\C++_2017\Chapter5_2017 - コピー\Debug\GameProgrammingCpp.exe

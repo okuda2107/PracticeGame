@@ -14,6 +14,8 @@ public:
 	void Unload();
 	void SetActive();
 	void SetMatrixUniform(const char* name, const Matrix4& matrix);
+	void SetVectorUniform(const char* name, const Vector3& vector);
+	void SetFloatUniform(const char* name, float value);
 private:
 	//シェーダーファイルをコンパイルする
 	bool CompileShader(const std::string& filename, GLenum shaderType, GLuint& outShader);

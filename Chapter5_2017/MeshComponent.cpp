@@ -25,8 +25,10 @@ void MeshComponent::Draw(Shader* shader)
 	if (mMesh)
 	{
 		// Set the world transform
+		//そのオブジェクト特有のパラメータを用いる場合ここに書く
 		shader->SetMatrixUniform("uWorldTransform",
 			mOwner->GetWorldTransform());
+		shader->SetFloatUniform("uSpecPower", mMesh->GetSpecPower());
 		// Set the active texture
 		Texture* t = mMesh->GetTexture(mTextureIndex);
 		if (t)

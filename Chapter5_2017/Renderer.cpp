@@ -109,6 +109,9 @@ void Renderer::Draw()
 	mMeshShader->SetActive();
 	// Update view-projection matrix
 	mMeshShader->SetMatrixUniform("uViewProj", mView * mProjection);
+
+	SetLightUniforms(mMeshShader);
+
 	for (auto mc : mMeshComps)
 	{
 		mc->Draw(mMeshShader);
@@ -209,7 +212,7 @@ bool Renderer::LoadShaders()
 
 	// Create basic mesh shader
 	mMeshShader = new Shader();
-	if (!mMeshShader->Load("Shaders/BasicMesh.vert", "Shaders/BasicMesh.frag"))
+	if (!mMeshShader->Load("Shaders/Phong.vert", "Shaders/Phong.frag"))
 	{
 		return false;
 	}
@@ -239,4 +242,22 @@ void Renderer::CreateSpriteVerts()
 	};
 
 	mSpriteVerts = new VertexArray(vertexBuffer, 4, indexBuffer, 6);
+}
+
+//ShaderファイルはGLSLへの架け橋の役目，光のセットアップを書いてしまうとそれが崩れる
+void Renderer::SetLightUniforms(Shader* shader)
+{
+	// Camera position is from inverted view
+	Matrix4 invView = mView;
+	invView.Invert();
+	shader->SetVectorUniform("uCameraPos", invView.GetTranslation());
+	// Ambient light
+	shader->SetVectorUniform("uAmbientLight", mAmbientLight);
+	// Directional light
+	shader->SetVectorUniform("uDirLight.mDirection",
+		mDirLight.mDirection);
+	shader->SetVectorUniform("uDirLight.mDiffuseColor",
+		mDirLight.mDiffuseColor);
+	shader->SetVectorUniform("uDirLight.mSpecColor",
+		mDirLight.mSpecColor);
 }
